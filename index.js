@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ai-server/index.js
-const frontendUrl = process.env.FRONTEND_URL || process.env.FRONTEND_URI || "http://localhost:3000";
-console.log("CORS Origin set to:", frontendUrl);
+const frontendUrl = "https://ai-portfolio-builder-digipodium.onrender.com";
+console.log("CORS Origin HARDCODED to:", frontendUrl);
 
 app.use(cors({
     origin: frontendUrl,

@@ -14,10 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ai-server/index.js
-console.log("CORS Origin set to:", process.env.FRONTEND_URL || "http://localhost:3000");
+const frontendUrl = process.env.FRONTEND_URL || process.env.FRONTEND_URI || "http://localhost:3000";
+console.log("CORS Origin set to:", frontendUrl);
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: frontendUrl,
     credentials: true 
 }));
 
